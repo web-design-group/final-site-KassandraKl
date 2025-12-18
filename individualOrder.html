@@ -1,0 +1,337 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Индивидуальный заказ - Лунная Кузница</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="js/fakeLoader.min.css">
+    <link rel="stylesheet" href="Style/Style_order.css">
+</head>
+<body>
+   
+    <header class="top-header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+
+                <a class="navbar-brand" href="#">
+                    <img src="img/logo.png" alt="Лунная Кузница" class="logo-img">
+                </a>
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarContent"
+                        aria-controls="navbarContent"
+                        aria-expanded="false"
+                        aria-label="Переключить навигацию">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav mx-auto mb-3 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="collectionsPages.html">Коллекции</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="individualOrder.html">Индивидуальный заказ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="master-class.html">Мастер-классы</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cart.html">
+                                Корзина (<span id="cart-count">0</span>)
+                            </a>
+                        </li>
+                    </ul>
+
+                    <button class="btn header-button" onclick="window.location.href='index.html'">
+                        Главная
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="fakeLoader"></div>
+
+    <section class="custom-hero py-5">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h1 class="page-title mb-3">Индивидуальный заказ</h1>
+                <p class="page-subtitle mx-auto">Создайте украшение вашей мечты вместе с нашими мастерами</p>
+            </div>
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="steps-list">
+                        <div class="d-flex mb-4">
+                            <div class="step-symbol me-3">✦</div>
+                            <div class="step-text">Заполните бриф ниже, подробно описав вашу идею</div>
+                        </div>
+                        <div class="d-flex mb-4">
+                            <div class="step-symbol me-3">✦</div>
+                            <div class="step-text">Наш мастер свяжется с вами для уточнения деталей</div>
+                        </div>
+                        <div class="d-flex mb-4">
+                            <div class="step-symbol me-3">✦</div>
+                            <div class="step-text">Внесите предоплату 30% для начала работы</div>
+                        </div>
+                        <div class="d-flex mb-4">
+                            <div class="step-symbol me-3">✦</div>
+                            <div class="step-text">Получите промежуточный результат и утвердите его</div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="step-symbol me-3">✦</div>
+                            <div class="step-text">Оплатите оставшуюся сумму и получите готовое изделие</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-5 offset-lg-1">
+                    <div class="hero-image">
+                        <img src="img/3-59.png" alt="Процесс создания индивидуального заказа" class="img-fluid w-100" style="height: 400px; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <main>
+
+        <div class="container section-title">
+            <div class="text-center py-4">
+                <h2 class="mb-3">Бриф для заказа</h2>
+                <div class="divider mb-3">✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦</div>
+                <p class="mx-auto">Заполните форму ниже, и мы создадим для вас уникальное украшение</p>
+            </div>
+        </div>
+
+
+        <div class="container order-form-section mb-5">
+            <form id="orderForm" class="needs-validation order-form bg-white p-4 p-md-5" novalidate>
+                <div class="row g-3 mb-4">
+     
+                    <div class="col-md-6">
+                        <label for="firstName" class="form-label">Имя *</label>
+                        <input type="text" class="form-control" id="firstName" required>
+                        <div class="invalid-feedback">
+                            Пожалуйста, введите ваше имя.
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="lastName" class="form-label">Фамилия *</label>
+                        <input type="text" class="form-control" id="lastName" required>
+                        <div class="invalid-feedback">
+                            Пожалуйста, введите вашу фамилию.
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="middleName" class="form-label">Отчество</label>
+                        <input type="text" class="form-control" id="middleName">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="phone" class="form-label">Номер телефона *</label>
+                        <input type="tel" class="form-control" id="phone"
+                               pattern="[\+]?[7|8][\s]?[\(]?\d{3}[\)]?[\s]?\d{3}[\s]?\d{2}[\s]?\d{2}"
+                               placeholder="+7 (999) 123-45-67" required>
+                        <div class="invalid-feedback">
+                            Пожалуйста, введите корректный номер телефона.
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Email *</label>
+                        <input type="email" class="form-control" id="email"
+                               placeholder="example@mail.ru" required>
+                        <div class="invalid-feedback">
+                            Пожалуйста, введите корректный email адрес.
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="budget" class="form-label">Бюджет *</label>
+                        <select class="form-select" id="budget" required>
+                            <option value="">Выберите бюджет</option>
+                            <option value="5000-15000">5 000 - 15 000 руб.</option>
+                            <option value="15000-30000">15 000 - 30 000 руб.</option>
+                            <option value="30000-50000">30 000 - 50 000 руб.</option>
+                            <option value="50000+">от 50 000 руб.</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Пожалуйста, выберите бюджет.
+                        </div>
+                    </div>
+
+
+                    <div class="col-12">
+                        <label for="ideaDescription" class="form-label">Описание вашей идеи *</label>
+                        <textarea class="form-control" rows="5" id="ideaDescription"
+                                  placeholder="Опишите подробно, какое украшение вы хотите: тип (кольцо, серьги, подвеска и т.д.), стиль, предпочтения по материалам, любые особые пожелания..."
+                                  required></textarea>
+                        <div class="invalid-feedback">
+                            Пожалуйста, опишите вашу идею.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="file-upload p-4 text-center mb-4">
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label upload-text mb-3">
+                            Загрузите референсы (фотографии, эскизы, вдохновляющие изображения)
+                        </label>
+                        <div class="input-group mb-3">
+                            <input type="file" class="form-control" id="formFile" multiple>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn submit-btn w-100">Отправить бриф</button>
+            </form>
+        </div>
+
+        <section class="cta-section py-5">
+            <div class="container">
+                <div class="cta-content text-center">
+                    <h2 class="mb-3">Нужна консультация?</h2>
+                    <p class="mb-4 mx-auto">Если ваш заказ не вписывается в стандартный бриф или у вас есть вопросы</p>
+                    <div class="phone-number">+7 (800) 555-35-35</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="footer pt-5">
+        <div class="container">
+
+            <div class="row g-4 mb-4">
+
+                <div class="col-md-4">
+                    <div class="footer-column">
+                        <h3 class="mb-3">Контакты</h3>
+                        <ul class="footer-links list-unstyled">
+                            <li class="mb-2"><a href="tel:+88005553535">тел: +88005553535</a></li>
+                            <li class="mb-2"><a href="mailto:MoonForge@mail.ru">почта: MoonForge@mail.ru</a></li>
+                            <li class="mb-2"><a href="https://chatGPT.com">чат поддержка</a></li>
+                            <li><a href="https://yandex.ru/maps/2/saint-petersburg/house/gangutskaya_ulitsa_12/Z0kYdQNgTkEFQFtjfXV1dHxrbQ==/?ll=30.340743%2C59.945090&z=16">ул. Гугуткина 12, офис 1</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="footer-column">
+                        <h3 class="mb-3">Социальные сети</h3>
+                        <ul class="footer-links list-unstyled">
+                            <li class="mb-2"><a href="https://web.telegram.org">Телеграмм</a></li>
+                            <li class="mb-2"><a href="https://vk.com">Вконтакте</a></li>
+                            <li><a href="https://tiktok.com">Тик ток</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="footer-column">
+                        <h3 class="mb-3">Документы</h3>
+                        <ul class="footer-links list-unstyled">
+                            <li class="mb-2"><a href="https://ru.wikipedia.org/wiki">Пользовательское соглашение</a></li>
+                            <li class="mb-2"><a href="https://en.wikipedia.org/wiki/Privacy_policy">Политика конфиденциальности</a></li>
+                            <li><a href="https://77.rospotrebnadzor.ru/index.php/press-centr/11482-pravila-vozvrata-tovarov-05-01-2023?ysclid=miq3cpnn6p4321280">Условия возврата</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom text-center pt-4">
+                <p>© 2025 Лунная Кузница. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <section class="modal fade success-modal" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title" id="successModalLabel">Заказ оформлен!</h1>
+                </div>
+                <div class="modal-body">
+                    <div class="success-divider"></div>
+                    <p class="success-subtitle">
+                        <i class="fas fa-envelope me-2"></i>
+                        Подробности также будут отправлены на указанный email.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn header-button"
+                            data-bs-dismiss="modal"
+                            onclick="setTimeout(() => window.location.href='index.html', 150)">
+                        На главную
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        (function () {
+            'use strict'
+
+            const forms = document.querySelectorAll('.needs-validation')
+
+            Array.from(forms).forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    } else {
+                        event.preventDefault()
+
+                        const successModal = new bootstrap.Modal(document.getElementById('successModal'))
+                        successModal.show()
+
+                        setTimeout(() => {
+                            form.reset()
+                            form.classList.remove('was-validated')
+                        }, 1000)
+                    }
+
+                   
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()  
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('lunarForgeCart')) || [];
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+
+            const cartCountElement = document.getElementById('cart-count');
+            if (cartCountElement) {
+                cartCountElement.textContent = totalItems;
+            }
+        }
+
+       
+        document.addEventListener('DOMContentLoaded', function () {
+            updateCartCount();
+        });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/fakeLoader.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.fakeLoader({
+                bgColor: '#1a0f5c', 
+                spinner: "spinner1",
+                timeToHide: 1000 
+            });
+        });
+    </script>
+</body>
+</html>
